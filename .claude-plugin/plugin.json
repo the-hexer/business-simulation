@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "startup-stress-test",
+  "displayName": "Startup Stress Test",
+  "version": "1.0.0",
+  "description": "Brutally realistic 180-day startup simulations in English and Chinese, driven by pessimistic industry benchmarks.",
+  "author": {
+    "name": "the-hexer",
+    "url": "https://github.com/the-hexer"
+  },
+  "homepage": "https://github.com/the-hexer/business-simulation",
+  "repository": "https://github.com/the-hexer/business-simulation",
+  "license": "MIT",
+  "keywords": [
+    "startup",
+    "business-simulation",
+    "stress-test",
+    "market-validation",
+    "cash-flow",
+    "entrepreneurship",
+    "bilingual"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "startup-stress-test-marketplace",
+  "description": "Bilingual (EN/ZH) startup stress-test skills for realistic business simulations.",
+  "owner": {
+    "name": "the-hexer",
+    "url": "https://github.com/the-hexer"
+  },
+  "plugins": [
+    {
+      "name": "startup-stress-test",
+      "source": "./",
+      "description": "Brutally realistic 180-day startup simulations in English and Chinese, driven by pessimistic industry benchmarks.",
+      "version": "1.0.0",
+      "category": "productivity"
+    }
+  ]
+}
