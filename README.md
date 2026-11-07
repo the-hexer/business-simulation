@@ -1,172 +1,169 @@
-# 创业压力测试 · Startup Stress Test
+# Startup Stress Test
 
-> 把你的创业想法扔进最真实的市场数据里，看它能不能活过 180 天。
+<div align="right">
+  <a href="README.md"><img src="https://img.shields.io/badge/EN-English-0969da?style=flat-square" alt="EN: English"></a>
+  <a href="README.zh-CN.md"><img src="https://img.shields.io/badge/ZH-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-6e7781?style=flat-square" alt="ZH: 简体中文"></a>
+</div>
 
-这是一个装进 AI 编程助手里的 Skill。你描述一个创业点子，它会扮演一位冷静、直言不讳的「创业压力测试员」，用行业中位数甚至偏下的悲观数据，陪你把想法从 Day 1 推演到 Day 180：找用户、上线、看真实用户行为、算现金流，直到钱快烧完时逼你做选择。
+Language: **English (default)** · [简体中文](README.zh-CN.md)
 
-它不写商业计划书，也不给你打气。它做的事只有一件：**在你还不需要付出真实代价的时候，把致命问题提前暴露出来。**
+> Throw your startup idea into the most unforgiving market data you can find, and see whether it survives 180 days.
 
----
+This is a Skill you install into an AI coding agent. Describe a business idea, and it becomes a calm, blunt **"Startup Stress Tester"** that uses median-to-pessimistic industry benchmarks to walk your idea from Day 1 to Day 180: finding users, launching, watching what real users actually do, running the cash-flow numbers, and finally forcing a decision before the money runs out.
 
-## 你会得到什么
-
-- **一份被拆解过的假设**：核心价值主张、8 个候选用户群的价值主张画布、3 个带「决策障碍」标签的用户画像
-- **一组不留情面的数字**：冷启动流量、转化漏斗、CAC、流失率、初始资金、月度燃烧率、剩余跑道、MRR，每个关键节点都摊开给你看
-- **真正由你决定的走向**：关键决策点会停下来给 A/B/C 选项，也接受你自己写的方案；你的方案会被评估可行性、成本、风险和成功概率，再推演下一阶段
-- **一次可带走的复盘**：重点分析「流量为什么难」和「付费转化为什么低」，给出能马上做的动作，而不是「再优化一下产品」
-
-**效果预览**（节选，实际输出会随你的选择变化）：
-
-> **【Day 90】** "时间快进 90 天……帖子总曝光 30,000 次，链接总点击 300 次（点击率 1%）。最终抵达网站的独立访客 250 人。经过浏览，其中 **5 人** 完成了注册。**网站注册转化率：2%**。这就是我们全部的初始用户。"
->
-> **【Day 91】** "上线第一周，**用户留存率：0%**。**付费转化：0%**。这是一个典型且严峻的开局。"
->
-> **【Day 180】** 商业健康度仪表盘：总用户 105 人 / 付费用户 1 人 / MRR ¥50 / 月流失率 15% / 剩余跑道可能已不足 2 个月 —— "你必须在公司倒闭前做出选择：坚持、转型、关闭。"
-
-**它不适合**：写代码、出技术实现方案、做市场调研报告、写融资 BP。它是一次对抗性的商业推演，不是交付物生成器。
+It does not write a business plan and it does not cheer you on. It does exactly one thing: **surface the fatal problems while you still do not have to pay for them in real life.**
 
 ---
 
-## 三步开始
+## What you get
 
-1. **装好**（下面挑一种方式，一两分钟）
-2. **说一句你的想法**，例如：*「我想做一个面向独立开发者的 AI 代码审查 SaaS，订阅 ¥50/月」*
-3. **跟着它做选择** —— 遇到决策点它会停下等你，不会替你决定
+- **Your assumptions taken apart**: the core value proposition, value proposition canvases for 8 candidate segments, and 3 user personas tagged with their "decision blockers"
+- **Numbers with no sugar-coating**: cold-start traffic, conversion funnel, CAC, churn, initial capital, monthly burn, remaining runway and MRR — laid open at every key milestone
+- **A story you actually steer**: at key decisions it pauses and offers A/B/C options, but also accepts a plan you write yourself; your plan gets assessed for feasibility, cost, risk and odds of success before the next stage is simulated
+- **A retrospective you can take away**: focused on *why traffic is hard* and *why paid conversion is low*, with things you can do tomorrow — not "go optimize the product"
 
-装好后不需要记命令：直接描述想法就会自动触发。也可以显式调用：
+**A taste of the output** (excerpt; the actual run changes with your choices):
 
-| Agent | 显式调用 |
+> **[Day 90]** "Fast-forward 90 days. Total post impressions: 30,000; total link clicks: 300 (1% CTR). Unique visitors who actually reached the site: 250. After browsing, **5 of them** completed sign-up. **Website sign-up conversion rate: 2%**. That is our entire initial user base."
+>
+> **[Day 91]** "In the first week after launch, **user retention: 0%**. **Paid conversion: 0%**. This is a typical — and severe — start."
+>
+> **[Day 180]** Business Health Dashboard: 105 total users / 1 paying user / MRR ¥50 / monthly churn 15% / remaining runway likely under 2 months — "You must choose before the company dies: persevere, pivot, or shut down."
+
+**What it is not for**: writing code, producing a technical design, generating market research reports, or drafting an investor deck. It is an adversarial business simulation, not a deliverable generator.
+
+---
+
+## Three steps to start
+
+1. **Install it** (pick one method below; takes a minute or two)
+2. **State your idea in one sentence**, e.g. *"I want to build an AI code-review SaaS for indie developers at ¥50/month"*
+3. **Make the choices** — it stops and waits for you at decision points, and never decides on your behalf
+
+You do not need to remember a command afterwards: simply describing your idea triggers it. You can also invoke it explicitly:
+
+| Agent | Explicit invocation |
 | --- | --- |
-| Claude Code | `/startup-stress-test`（英文）或 `/startup-stress-test-zh`（中文） |
+| Claude Code | `/startup-stress-test` (English) or `/startup-stress-test-zh` (Chinese) |
 | Codex CLI | `$startup-stress-test` / `$startup-stress-test-zh` |
 
-输出语言跟随你的提问：用中文问就得到中文推演，用英文问就得到英文推演，数据不变。
+The output language follows the language you ask in; the underlying data is identical either way.
 
 ---
 
-## 安装
+## Install
 
-### Claude Code：两条命令（推荐）
+### Claude Code: two commands (recommended)
 
 ```bash
 claude plugin marketplace add the-hexer/business-simulation
 claude plugin install startup-stress-test@startup-stress-test-marketplace
 ```
 
-在 Claude Code 会话里也可以用 `/plugin marketplace add ...` 和 `/plugin install ...`。中英两个 Skill 会一起装上。
+Inside a Claude Code session you can also use `/plugin marketplace add the-hexer/business-simulation` and `/plugin install startup-stress-test@startup-stress-test-marketplace`. Both the English and the Chinese Skill are installed together.
 
-### 其他 agent：安装脚本
+### Other agents: the installer script
+
+The script lives in this repository, so clone it first:
 
 ```bash
-# macOS / Linux / Windows Git Bash
+# macOS / Linux / Git Bash on Windows
+git clone https://github.com/the-hexer/business-simulation.git
+cd business-simulation
 ./scripts/install.sh --target claude-code,codex --scope user --lang both
 ```
 
 ```powershell
 # Windows PowerShell
+git clone https://github.com/the-hexer/business-simulation.git
+cd business-simulation
 .\scripts\install.ps1 -Target claude-code,codex -Scope user -Lang both
 ```
 
-常用变体：只想装中文加 `--lang zh`、装到当前项目加 `--scope project`、先看看会改哪些文件加 `--dry-run`。完整参数用 `./scripts/install.sh --help` 查看。脚本只复制文件夹，不会执行任何远程代码；覆盖已有安装时会自动先备份。
+Useful variants: `--lang en` for English only, `--scope project` to install into the current project, `--dry-run` to preview every path before anything is touched. Run `./scripts/install.sh --help` for the full option list. The script only copies folders — it executes no remote code — and backs up an existing install before overwriting it.
 
-### 任何兼容 agent：直接复制目录
+### Any compatible agent: just copy the folder
 
-把 `skills/startup-stress-test/` 或 `skills/startup-stress-test-zh/` 整个文件夹复制到对应位置：
+Copy the whole `skills/startup-stress-test/` or `skills/startup-stress-test-zh/` directory to the matching location:
 
-| Agent | 用户级 | 项目级 |
+| Agent | User scope | Project scope |
 | --- | --- | --- |
 | Claude Code | `~/.claude/skills/` | `.claude/skills/` |
 | Codex CLI / Cursor / Amp | `~/.agents/skills/` | `.agents/skills/` |
 | GitHub Copilot | — | `.github/skills/` |
 
-两个 Skill 各自**自包含**——剧本全文就在 `SKILL.md` 里，复制完立刻可用，不需要额外文件。装完重启 agent（Claude Code 可执行 `/reload-plugins`）。
+Each Skill is **self-contained** — the entire script is inside `SKILL.md`, so it works immediately with no extra files. Restart your agent afterwards (`/reload-plugins` works in Claude Code).
 
 ---
 
-## 一次模拟会经历什么
+## What one simulation looks like
 
-| 时间 | 阶段 | 会发生什么 |
+| When | Stage | What happens |
 | --- | --- | --- |
-| 开始前 | 事实校验 | 提取你想法里的事实性描述并核对，有疑点先找你确认 |
-| Day 1–5 | 严酷的市场审视 | 解构价值主张 → 8 个用户群的画布（重点看变现难度和获客壁垒）→ 3 个用户画像（标注价格敏感度、对现有工具的忠诚度、对新品的怀疑） |
-| Day 90 | 上线即挑战 | MVP 上线，展示初始资金 / 燃烧率 / 跑道；一次社区冷启动后给出真实流量与注册数据 |
-| Day 91 | 用户冷漠与流失 | 逐个追踪那几位用户的真实行为，看留存和付费转化 |
-| Day 180 | 审判日 | 投入剩余资金做付费推广，给出商业健康度仪表盘，逼你在现金流耗尽前选择坚持 / 转型 / 关闭 |
-| 结束 | 复盘与迭代 | 分析根因、给可执行建议，并提供带着这次教训重启模拟的选项 |
+| Before starting | Fact check | Extracts factual claims from your idea and verifies them; asks you before proceeding if anything looks off |
+| Day 1–5 | A harsh market audit | Deconstructs the value proposition → canvases for 8 segments (focused on monetisation difficulty and acquisition barriers) → 3 personas (price sensitivity, loyalty to existing tools, scepticism toward newcomers) |
+| Day 90 | Launch and first data | MVP goes live with initial capital / burn / runway; one cold-start community push produces real traffic and sign-up numbers |
+| Day 91 | Indifference and churn | Follows those few users individually to see retention and paid conversion |
+| Day 180 | Judgment day | Spends the remaining funds on paid acquisition, shows the Business Health Dashboard, and forces a persevere / pivot / shut-down call before cash hits zero |
+| End | Retrospective | Root-cause analysis, concrete next actions, and the option to restart carrying this run's scars |
 
-### 关于「停下来等你」
+### About "it stops and waits for you"
 
-模拟器不会一路顺风地编故事。遇到「选哪些细分客户」「惨淡数据怎么办」「现金流预警」这类节点，它会暂停、给出 A/B/C 选项，**同时允许你直接用开放式文本写自己的方案**。你的方案会被快速评估（可行性、时间与金钱与人力成本、潜在风险、成功概率），再演算对现金、士气、声誉的影响。想法过于理想化（比如「让产品一夜爆红」）会收到明确的负面反馈和很低的成功率。
+The simulator does not invent a smooth success story. At decision points — which segments to chase, what to do about dismal numbers, how to handle a cash-flow warning — it pauses, offers A/B/C options, **and lets you write your own plan as free-form text**. Your plan is quickly assessed (feasibility; time, money and manpower cost; potential risks; probability of success), then its impact on cash, morale and reputation is calculated into the next stage. Overly idealistic ideas ("make it go viral overnight") get explicit negative feedback and a very low success probability.
 
 ---
 
-## 为什么数据这么「残酷」
+## Why the numbers are so brutal
 
-因为它刻意取行业中位数甚至偏下的悲观值，用来对抗幸存者偏差：
+Because they deliberately use industry medians or worse, to counter survivorship bias:
 
-| 指标 | 基准 |
+| Metric | Benchmark |
 | --- | --- |
-| 社区冷启动点击率 | 0.5%–2% |
-| 网站访问 → 注册 | 1%–3% |
-| 免费 → 付费（SaaS / 内容产品） | 0.5%–2% ← 整个模拟的财务瓶颈 |
-| 早期月流失率 | 10%–20% |
-| CAC | 按行业设定高昂值（B2C 数十至数百元，B2B 数千元） |
+| Cold-start community CTR | 0.5%–2% |
+| Site visit → sign-up | 1%–3% |
+| Free → paid (SaaS / content products) | 0.5%–2% ← the financial bottleneck of the whole simulation |
+| Early-stage monthly churn | 10%–20% |
+| CAC | Set high for the industry (tens to hundreds of yuan B2C, thousands B2B) |
 
-金额沿用原文的 `¥`。想让模拟更贴近你的市场，可以直接编辑 `SKILL.md` 里的这些数字和示例金额；**改完记得中英两份保持同步**。
+Amounts stay in `¥` as in the original prompt — converting them to USD would change what the numbers mean. To tailor the simulation to your market, edit these figures and example amounts directly in `SKILL.md`; **keep the English and Chinese copies in sync afterwards**.
 
 ---
 
-## 中英版本怎么选
+## Which language version?
 
-| Skill | 语言 | 适合 |
+| Skill | Language | Best for |
 | --- | --- | --- |
-| `startup-stress-test` | English | 英文工作环境、需要把推演结果发给国际团队 |
-| `startup-stress-test-zh` | 简体中文 | 中文想法、中文讨论 |
+| `startup-stress-test` | English | English-speaking teams, sharing the simulation with international colleagues |
+| `startup-stress-test-zh` | 简体中文 | Ideas and discussions in Chinese |
 
-两份剧本结构、阶段、数据完全一致，只是语言不同。默认两个都装也没问题，agent 会按你的提问语言匹配；只想要一个的话，安装时加 `--lang en` 或 `--lang zh`。
-
----
-
-## 常见问题
-
-**需要联网吗？** 不强制。有搜索工具时，它会先核对想法里的事实描述、查行业数据来优化基准；没有搜索工具也能完整跑完，只是事实校验环节会简化。
-
-**它会不会一直泼冷水？** 会一直直言不讳，但目标是暴露问题而不是否定你。最后一阶段一定给针对性的、可操作的建议，例如「写第一行代码前先做预售页，看有没有人愿意付 10 元定金」。
-
-**会改我的文件、执行命令或发请求吗？** 不会。这是纯指令型 Skill，只输出文字推演；安装脚本是唯一会动文件的东西，且只复制 Skill 文件夹。
-
-**装了却没反应？** 重启 agent，或在 Claude Code 里执行 `/reload-plugins`；Codex 可用 `$startup-stress-test` 显式调用。也可以直接把想法说得更具体一些，更容易触发。
-
-**能中途换方向或重来吗？** 能。你的选择会改变后续剧情；模拟结束后可以带着这次的「伤疤」和教训重新开始。
-
-**支持哪些 agent？** 遵循 [agentskills.io](https://agentskills.io/specification) 规范的都支持，已验证的安装路径见上表：Claude Code、Codex CLI、GitHub Copilot、Cursor / Amp 等。
+Both scripts share the same structure, stages and data; only the language differs. Installing both is fine — the agent picks based on the language of your prompt. If you want just one, use `--lang en` or `--lang zh`.
 
 ---
 
-## English (quick start)
+## FAQ
 
-A bilingual Agent Skill that runs a pessimistic, data-driven 180-day startup simulation with interactive decision points. Install, then simply describe your idea.
+**Does it need internet access?** No. With search tools available it verifies factual claims in your idea and looks up industry data to refine the benchmarks; without them the full simulation still runs, just with a lighter fact-check step.
 
-```bash
-claude plugin marketplace add the-hexer/business-simulation
-claude plugin install startup-stress-test@startup-stress-test-marketplace
+**Is it negative the whole time?** It stays blunt, but the goal is to expose problems, not to dismiss you. The final stage always gives targeted, actionable advice — for example "put up a pre-sale page before writing the first line of code and see if anyone will pay a ¥10 deposit".
 
-# or for any compatible agent
-./scripts/install.sh --target claude-code,codex --scope user --lang en
-```
+**Will it change my files, run commands or send requests?** No. This is a pure instruction Skill that only outputs a text simulation. The installer script is the only thing that touches files, and it only copies Skill folders.
 
-Skill locations: `~/.claude/skills/` (Claude Code), `~/.agents/skills/` (Codex / Cursor / Amp), `.github/skills/` (Copilot, project-scoped).
+**I installed it but nothing happens.** Restart your agent, or run `/reload-plugins` in Claude Code; in Codex you can invoke `$startup-stress-test` explicitly. Making your idea more concrete also helps triggering.
 
----
+**Can I change direction mid-run or start over?** Yes. Your choices change what happens next, and after the retrospective you can restart carrying the lessons from this run.
 
-## 致谢
-
-原始创业模拟提示词来自 [easychen/opc-methodology](https://github.com/easychen/opc-methodology)（《一人企业方法论》）。本项目在其基础上整理为可安装的 Agent Skills，补充英文版本与多 agent 安装方式。
+**Which agents are supported?** Anything following the [agentskills.io](https://agentskills.io/specification) specification. Verified paths are listed above: Claude Code, Codex CLI, GitHub Copilot, Cursor / Amp and others.
 
 ---
 
-## 维护者备注
+## Credits
 
-本仓库已发布为 [the-hexer/business-simulation](https://github.com/the-hexer/business-simulation)（public，默认分支 `main`）。`.claude-plugin/` 必须保持在仓库根目录，否则 `/plugin marketplace add` 找不到清单。改动内容后同步 bump 两个 JSON 里的 `version`（Claude Code 靠版本号判断是否需要推送更新）。本地校验：`python scripts/validate.py`（纯标准库、离线可跑）；CI 会在每次 push / PR 自动检查两份剧本的关键数据是否一致。
+The original startup simulation prompt comes from [easychen/opc-methodology](https://github.com/easychen/opc-methodology) (《一人企业方法论》, the One-Person Company methodology). This project repackages it as installable Agent Skills and adds an English version plus multi-agent installers.
 
-MIT © 2026 the-hexer · 见 [LICENSE](LICENSE)
+---
+
+## Maintainer notes
+
+The repository is published at [the-hexer/business-simulation](https://github.com/the-hexer/business-simulation) (public, default branch `main`). `.claude-plugin/` must stay at the repository root or `/plugin marketplace add` cannot find the manifest. `README.md` is the default English document and `README.zh-CN.md` is the Chinese one; keep the language-switch links in both files. After changing content, bump `version` in both JSON manifests in sync (Claude Code uses it to decide whether to push an update). Local check: `python scripts/validate.py` (pure standard library, works offline); CI re-checks that the key figures in both scripts still match on every push and PR.
+
+MIT © 2026 the-hexer · see [LICENSE](LICENSE)

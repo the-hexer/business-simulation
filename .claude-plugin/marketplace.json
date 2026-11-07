@@ -10,7 +10,7 @@
       "name": "startup-stress-test",
       "source": "./",
       "description": "Brutally realistic 180-day startup simulations in English and Chinese, driven by pessimistic industry benchmarks.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "category": "productivity"
     }
   ]

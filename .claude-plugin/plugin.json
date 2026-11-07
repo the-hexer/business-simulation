@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "startup-stress-test",
   "displayName": "Startup Stress Test",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Brutally realistic 180-day startup simulations in English and Chinese, driven by pessimistic industry benchmarks.",
   "author": {
     "name": "the-hexer",

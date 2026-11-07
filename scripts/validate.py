@@ -10,10 +10,16 @@ import json
 import re
 import sys
 from pathlib import Path
+from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS_DIR = ROOT / "skills"
 NAME_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
+PLACEHOLDER_RE = re.compile(
+    r"YOUR_GITHUB_USERNAME|<user>|<username>|your-username|example\.com/[^\s]*/startup",
+    re.IGNORECASE,
+)
+README_FILES = ("README.md", "README.zh-CN.md")
 
 # Key figures that must stay identical across the EN and ZH scripts.
 SHARED_MARKERS = (
@@ -158,22 +164,76 @@ if marketplace:
         entry = entries[0]
         if plugin and entry.get("name") != plugin.get("name"):
             errors.append("marketplace entry name must match plugin.json name")
+        if plugin and entry.get("version") != plugin.get("version"):
+            errors.append(
+                "version mismatch: plugin.json=%s marketplace.json=%s"
+                % (plugin.get("version"), entry.get("version"))
+            )
         if entry.get("source") != "./":
             warnings.append("marketplace entry source is '%s'; './' is expected for a self-hosted repo" % entry.get("source"))
         print("  OK  marketplace.json name=%s source=%s" % (marketplace.get("name"), entry.get("source")))
 
 # --- 3. Repository hygiene -------------------------------------------------
-for rel in ("README.md", "LICENSE", "scripts/install.sh", "scripts/install.ps1"):
+for rel in README_FILES + ("LICENSE", "scripts/install.sh", "scripts/install.ps1"):
     if not (ROOT / rel).is_file():
         errors.append("Missing repository file: %s" % rel)
 
-placeholder_hits = []
-for rel in (".claude-plugin/plugin.json", ".claude-plugin/marketplace.json"):
+# No leftover username / repo placeholders in any published document.
+for rel in (
+    ".claude-plugin/plugin.json",
+    ".claude-plugin/marketplace.json",
+    "LICENSE",
+) + README_FILES + tuple(
+    "skills/%s/SKILL.md" % p.name for p in skill_dirs
+):
     path = ROOT / rel
-    if path.is_file() and "YOUR_GITHUB_USERNAME" in path.read_text(encoding="utf-8"):
-        placeholder_hits.append(rel)
-if placeholder_hits:
-    warnings.append("Replace YOUR_GITHUB_USERNAME before publishing: %s" % ", ".join(placeholder_hits))
+    if not path.is_file():
+        continue
+    hit = PLACEHOLDER_RE.search(path.read_text(encoding="utf-8"))
+    if hit:
+        errors.append("%s: unresolved placeholder %r" % (rel, hit.group(0)))
+
+# Both READMEs must link to each other (the language switcher), including a
+# plain-text fallback for users who cannot load the badge images.
+for rel, other in (("README.md", "README.zh-CN.md"), ("README.zh-CN.md", "README.md")):
+    path = ROOT / rel
+    if not path.is_file():
+        continue
+    text = path.read_text(encoding="utf-8")
+    has_badge = 'href="%s"' % other in text
+    has_text_link = "](%s)" % other in text
+    if not (has_badge and has_text_link):
+        errors.append(
+            "%s: language switcher must have both a button link and a text link to %s"
+            % (rel, other)
+        )
+    else:
+        print("  OK  %-20s language switch -> %s" % (rel, other))
+
+# Install instructions in both languages must point at the repository declared
+# in plugin.json, not at the old placeholder / a stale repo name.
+if plugin:
+    repo_slug = urlparse(plugin.get("repository", "")).path.strip("/")
+    if repo_slug.endswith(".git"):
+        repo_slug = repo_slug[:-4]
+    if repo_slug:
+        for rel in README_FILES:
+            path = ROOT / rel
+            if not path.is_file():
+                continue
+            text = path.read_text(encoding="utf-8")
+            slugs = set(re.findall(r"plugin marketplace add ([^\s`]+)", text)) - {"...", "…"}
+            if not slugs:
+                errors.append("%s: missing 'claude plugin marketplace add <owner/repo>'" % rel)
+            elif slugs != {repo_slug}:
+                errors.append(
+                    "%s: install command points at %s, expected %s"
+                    % (rel, ", ".join(sorted(slugs)), repo_slug)
+                )
+            if "git clone https://github.com/%s.git" % repo_slug not in text:
+                warnings.append("%s: missing git clone command for %s" % (rel, repo_slug))
+            else:
+                print("  OK  %-20s install commands -> %s" % (rel, repo_slug))
 
 # --- 4. Report -------------------------------------------------------------
 print()
