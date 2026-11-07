@@ -1,0 +1,6 @@
+# Shell and CI files must stay LF, otherwise Git Bash / Linux / macOS
+# will fail with "\r: command not found" after a Windows checkout.
+*.sh   text eol=lf
+*.py   text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf
